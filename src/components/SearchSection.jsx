@@ -3,9 +3,9 @@ import { useState } from 'react';
 const SearchSection = () => {
   const [searchValue, setSearchValue] = useState('');
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState('TakeAway');
+  const [selectedOption, setSelectedOption] = useState('Take Away');
 
-  const options = ['Dining', 'TakeAway'];
+  const options = ['Dining', 'Take Away'];
 
   const handleSelect = (option) => {
     setSelectedOption(option);
