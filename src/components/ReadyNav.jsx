@@ -1,7 +1,7 @@
 import React from 'react'
-import User from '../assets/svg/User.svg'
-import Exit from '../assets/svg/Exit.svg'
+
 import Logo from '../assets/svg/Logo.svg'
+import { Link } from 'react-router-dom'
 
 const ReadyNav = () => {
   return (
@@ -10,8 +10,9 @@ const ReadyNav = () => {
                 <div className="bg-linear-to-r from-[#F97316] to-[#EF4444] font-pacifico w-14 h-14 rounded-full flex justify-center items-center">
                     <span className='text-xl'>l</span>
                 </div>
+                
                 <div className='flex flex-col'>
-                    <h1 className='font-pacifico text-2xl '>.Limited</h1>
+                    <Link to={"/status"}><h1 className='font-pacifico text-2xl '>.Limiteddd</h1></Link>
                     <h2 className='font-light text-sm'>Quality Food, Quick Service</h2>
                 </div>
                 

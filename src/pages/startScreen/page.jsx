@@ -1,9 +1,20 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom"; // ✅ React Router import
 import Bg from "../../assets/images/StartBg.jpg";
 
 const StartScreen = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigate("/status"); // ✅ Navigate after 5 seconds
+    }, 5000);
+
+    return () => clearTimeout(timer); // cleanup timer
+  }, [navigate]);
+
   return (
     <motion.div
       className="flex flex-col gap-3 items-center justify-center h-screen w-full text-white font-dm bg-cover bg-center overflow-hidden"
@@ -16,7 +27,6 @@ const StartScreen = () => {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
-      
     >
       {/* Title */}
       <motion.h1
