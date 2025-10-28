@@ -97,5 +97,243 @@ export const ordersData = [
       { name: '1 X French Fries' },
       { name: '1 X Cola' }
     ]
-  }
+  },
+  {
+    id: '#011',
+    time: '6:15',
+    status: 'preparing',
+    items: [
+      { name: '2 X Vegan Wrap', details: ['Extra Avocado', 'Add Spicy Sauce'] },
+      { name: '3 X Fish Tacos' },
+      { name: '1 X Side Salad' }
+    ]
+  },
+  {
+    id: '#012',
+    time: '5:45',
+    status: 'preparing',
+    items: [
+      { name: '3 X Veggie Pizza', details: ['Cut Into Slices', 'No Olives'] },
+      { name: '2 X Garlic Bread' },
+      { name: '2 X Soda' }
+    ]
+  },
+  {
+    id: '#013',
+    time: '6:15',
+    status: 'preparing',
+    items: [
+      { name: '4 X Sushi Rolls', details: ['No Wasabi', 'Add Soy Sauce'] },
+      { name: '1 X Miso Soup' },
+      { name: '1 X Green Tea' }
+    ]
+  },
+  {
+    id: '#014',
+    time: '6:45',
+    status: 'preparing',
+    items: [
+      { name: '2 X Falafel Wrap', details: ['Extra Tahini', 'No Garlic'] },
+      { name: '3 X Hummus Dips' },
+      { name: '2 X Mint Tea' }
+    ]
+  },
+  {
+    id: '#015',
+    time: '5:30',
+    status: 'ready',
+    items: [
+      { name: '1 X Classic Bacon Burger', details: ['No Pickle', 'Add BBQ Sauce'] },
+      { name: '4 X Sweet Potato Fries' },
+      { name: '1 X Coleslaw' }
+    ]
+  },
+  {
+    id: '#016',
+    time: '6:00',
+    status: 'ready',
+    items: [
+      { name: '2 X Spicy Chicken Sandwich', details: ['Add Extra Lettuce', 'No Onions'] },
+      { name: '1 X Caesar Salad' },
+      { name: '1 X Iced Tea' }
+    ]
+  },
+  {
+    id: '#017',
+    time: '6:30',
+    status: 'ready',
+    items: [
+      { name: '1 X Grilled Cheese', details: ['Add Tomato', 'No Butter'] },
+      { name: '2 X Potato Wedges' },
+      { name: '1 X Lemonade' }
+    ]
+  },
+  {
+    id: '#019',
+    time: '7:00',
+    status: 'ready',
+    items: [
+      { name: '1 X Margherita Pizza', details: ['No Basil', 'Add Chili Flakes'] },
+      { name: '2 X Mozzarella Sticks' },
+      { name: '1 X Sparkling Water' }
+    ]
+  },
+  {
+    id: '#020',
+    time: '5:00',
+    status: 'collected',
+    items: [
+      { name: '2 X Caesar Salad', details: ['Extra Dressing'] },
+      { name: '1 X Iced Coffee' }
+    ]
+  },
+  {
+    id: '#022',
+    time: '7:15',
+    status: 'collected',
+    items: [
+      { name: '1 X Chicken Burger', details: ['No Mayo'] },
+      { name: '1 X French Fries' },
+      { name: '1 X Cola' }
+    ]
+  },
+    {
+    id: '#026',
+    time: '6:00',
+    status: 'ready',
+    items: [
+      { name: '2 X Spicy Chicken Sandwich', details: ['Add Extra Lettuce', 'No Onions'] },
+      { name: '1 X Caesar Salad' },
+      { name: '1 X Iced Tea' }
+    ]
+  },
+  {
+    id: '#027',
+    time: '6:30',
+    status: 'ready',
+    items: [
+      { name: '1 X Grilled Cheese', details: ['Add Tomato', 'No Butter'] },
+      { name: '2 X Potato Wedges' },
+      { name: '1 X Lemonade' }
+    ]
+  },
+  {
+    id: '#029',
+    time: '7:00',
+    status: 'ready',
+    items: [
+      { name: '1 X Margherita Pizza', details: ['No Basil', 'Add Chili Flakes'] },
+      { name: '2 X Mozzarella Sticks' },
+      { name: '1 X Sparkling Water' }
+    ]
+  },
+  {
+    id: '#030',
+    time: '5:00',
+    status: 'collected',
+    items: [
+      { name: '2 X Caesar Salad', details: ['Extra Dressing'] },
+      { name: '1 X Iced Coffee' }
+    ]
+  },
+  {
+    id: '#032',
+    time: '7:15',
+    status: 'collected',
+    items: [
+      { name: '1 X Chicken Burger', details: ['No Mayo'] },
+      { name: '1 X French Fries' },
+      { name: '1 X Cola' }
+    ]
+  },
+    {
+    id: '#034',
+    time: '6:45',
+    status: 'preparing',
+    items: [
+      { name: '2 X Falafel Wrap', details: ['Extra Tahini', 'No Garlic'] },
+      { name: '3 X Hummus Dips' },
+      { name: '2 X Mint Tea' }
+    ]
+  },
+  {
+    id: '#035',
+    time: '5:30',
+    status: 'preparing',
+    items: [
+      { name: '1 X Classic Bacon Burger', details: ['No Pickle', 'Add BBQ Sauce'] },
+      { name: '4 X Sweet Potato Fries' },
+      { name: '1 X Coleslaw' }
+    ]
+  },
+  {
+    id: '#036',
+    time: '6:00',
+    status: 'preparing',
+    items: [
+      { name: '2 X Spicy Chicken Sandwich', details: ['Add Extra Lettuce', 'No Onions'] },
+      { name: '1 X Caesar Salad' },
+      { name: '1 X Iced Tea' }
+    ]
+  },
+  {
+    id: '#037',
+    time: '6:30',
+    status: 'preparing',
+    items: [
+      { name: '1 X Grilled Cheese', details: ['Add Tomato', 'No Butter'] },
+      { name: '2 X Potato Wedges' },
+      { name: '1 X Lemonade' }
+    ]
+  },
+  {
+    id: '#038',
+    time: '6:45',
+    status: 'preparing',
+    items: [
+      { name: '2 X Falafel Wrap', details: ['Extra Tahini', 'No Garlic'] },
+      { name: '3 X Hummus Dips' },
+      { name: '2 X Mint Tea' }
+    ]
+  },
+  {
+    id: '#039',
+    time: '5:30',
+    status: 'preparing',
+    items: [
+      { name: '1 X Classic Bacon Burger', details: ['No Pickle', 'Add BBQ Sauce'] },
+      { name: '4 X Sweet Potato Fries' },
+      { name: '1 X Coleslaw' }
+    ]
+  },
+  {
+    id: '#040',
+    time: '6:00',
+    status: 'preparing',
+    items: [
+      { name: '2 X Spicy Chicken Sandwich', details: ['Add Extra Lettuce', 'No Onions'] },
+      { name: '1 X Caesar Salad' },
+      { name: '1 X Iced Tea' }
+    ]
+  },
+  {
+    id: '#041',
+    time: '6:30',
+    status: 'preparing',
+    items: [
+      { name: '1 X Grilled Cheese', details: ['Add Tomato', 'No Butter'] },
+      { name: '2 X Potato Wedges' },
+      { name: '1 X Lemonade' }
+    ]
+  },
+  {
+    id: '#042',
+    time: '6:30',
+    status: 'preparing',
+    items: [
+      { name: '1 X Grilled Cheese', details: ['Add Tomato', 'No Butter'] },
+      { name: '2 X Potato Wedges' },
+      { name: '1 X Lemonade' }
+    ]
+  },
 ];

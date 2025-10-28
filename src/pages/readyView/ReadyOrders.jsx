@@ -6,7 +6,7 @@ const ReadyOrders = () => {
     <div>
         <h1 className='uppercase font-bold text-2xl text-[#121212]'>Ready for pickup</h1>
         <div className='grid grid-cols-6 lg:grid-cols-8 xl:grid-cols-12 gap-3 py-5'>
-            { Array.from({length:20}).map((_, index)=>(
+            { Array.from({length:40}).map((_, index)=>(
                 <ReadyCard key={index}/>
             )) }
         </div>
