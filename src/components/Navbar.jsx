@@ -9,7 +9,7 @@ const Navbar = () => {
     <div className='text-black bg-[#F1F1F1]  flex items-center justify-between p-5'>
         <div className='flex items-center gap-5 text-[#121212]'>
             <Link to={"/result"}><h1 className='font-pacifico text-2xl '>Limited</h1></Link>
-            <h2 className='font-bold'>Restaurant Kitchen</h2>
+            <h2 className='font-bold text-lg'>Restaurant Kitchen</h2>
             <div className=' ' >
                 <img src={Logo} alt="logo" />
             </div>

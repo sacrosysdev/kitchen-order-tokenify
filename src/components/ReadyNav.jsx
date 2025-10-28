@@ -12,7 +12,7 @@ const ReadyNav = () => {
                 </div>
                 
                 <div className='flex flex-col'>
-                    <Link to={"/status"}><h1 className='font-pacifico text-2xl cursor-pointer'>.Limiteddd</h1></Link>
+                    <Link to={"/status"}><h1 className='font-pacifico text-2xl cursor-pointer'>.Limited</h1></Link>
                     <h2 className='font-light text-sm'>Quality Food, Quick Service</h2>
                 </div>
                 
