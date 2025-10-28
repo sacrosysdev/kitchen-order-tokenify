@@ -5,7 +5,7 @@ const SearchSection = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState('TakeAway');
 
-  const options = ['Eating Here', 'TakeAway'];
+  const options = ['Dining', 'TakeAway'];
 
   const handleSelect = (option) => {
     setSelectedOption(option);
