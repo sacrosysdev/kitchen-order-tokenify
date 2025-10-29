@@ -30,7 +30,7 @@ const OrderStatus = () => {
   };
       
   return (
-    <div className='bg-white rounded-lg p-4 h-full'>
+    <div className='bg-white rounded-lg p-2 h-full'>
       <div className=''>
         <CategorySection 
           activeCategory={activeCategory}

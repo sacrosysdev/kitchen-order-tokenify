@@ -6,7 +6,7 @@ const  OrderCard = ({ order, onMarkReady, onDelete, activeCategory, onMarkCollec
     <div className={`bg-[#FAFAFA] rounded-lg border-l-4 ${ activeCategory === "preparing" ? "border-[#16A34A] ": activeCategory === "ready" ? "border-[#0088FF]" : "border-[#DC2626]"} p-4 hover:shadow-md transition-shadow flex flex-col justify-between`}>
       {/* Header */}
       <div>
-        <div className="flex items-center gap-2 mb-3">
+        <div className="flex items-center gap-2 mb-2">
         <h3 className="text-xl font-bold">{order.id}</h3>
         
       </div>
@@ -16,7 +16,7 @@ const  OrderCard = ({ order, onMarkReady, onDelete, activeCategory, onMarkCollec
         </div>
 
       {/* Order Items */}
-      <div className="space-y-2 mb-4">
+      <div className="space-y-2 mb-2">
         {order.items.map((item, idx) => (
           <div key={idx} className="text-sm">
             <div className="font-medium text-gray-900">{item.name}</div>

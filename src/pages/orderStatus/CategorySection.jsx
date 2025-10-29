@@ -29,7 +29,7 @@ const categories = [
                 }`}
             >
                 <img src={item.icon} alt="icon" className='h-6 w-6'/>
-                <h2 className='font-semibold'>{item.label}</h2>
+                <h2 className='font-semibold text-sm'>{item.label}</h2>
             </div>
             <div
               className={`transition-all duration-300 ease-in-out 

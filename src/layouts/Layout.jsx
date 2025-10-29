@@ -7,7 +7,7 @@ const Layout = ({children}) => {
     <div className='font-poppins bg-[#F1F1F1] min-h-screen'>
         <Navbar/>
         <SearchSection/>
-        <div className='p-5'>
+        <div className='px-5 py-2'>
             {children}
         </div>
     </div>

@@ -13,7 +13,7 @@ const SearchSection = () => {
   };
 
   return (
-    <div className=" bg-[#F1F1F1] flex items-center border border-[#374151] p-5 ">
+    <div className=" bg-[#F1F1F1] flex items-center border-b border-[#374151] pb-2 px-5 ">
       <div className="flex gap-2 w-full items-center">
         {/* Search Input */}
         <div className='w-2/3'>
@@ -30,7 +30,7 @@ const SearchSection = () => {
         <div className="relative w-1/3 ">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="w-full px-5 py-3 bg-[#16A34A] hover:bg-green-600 cursor-pointer text-white rounded-lg text-sm font-medium transition-colors flex items-center justify-between"
+            className="w-full px-5 py-3 bg-[#16A34A] hover:bg-green-600 cursor-pointer text-white rounded-lg text-sm font-light transition-colors flex items-center justify-between"
           >
             <span>{selectedOption}</span>
             <svg
