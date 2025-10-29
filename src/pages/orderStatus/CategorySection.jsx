@@ -22,10 +22,10 @@ const categories = [
             <div 
                 
                 onClick={()=>{handleCategory(item.id)}} 
-                className={`flex gap-1 py-2 items-center cursor-pointer transition-all duration-300 ease-in-out ${
+                className={`flex gap-1 py-2 border-b-2 hover:border-green-500 items-center cursor-pointer transition-all duration-300 ease-in-out ${
                     item.id === activeCategory 
-                        ? "border-b-2 border-green-500" 
-                        : "border-b-2 border-transparent"
+                        ? " border-green-500" 
+                        : " border-transparent"
                 }`}
             >
                 <img src={item.icon} alt="icon" className='h-6 w-6'/>
