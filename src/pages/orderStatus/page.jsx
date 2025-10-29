@@ -31,8 +31,9 @@ const OrderStatus = () => {
   };
       
   return (
-    <div className='relative overflow-x-hidden'>
-    <div className='bg-white rounded-lg py-5 px-8 h-full '>
+    <div className='relative overflow-x-hidden '>
+    <div className='px-5'>
+      <div className='bg-white rounded-lg py-3 px-1 h-full '>
 
       <div className=''>
         <CategorySection 
@@ -49,6 +50,7 @@ const OrderStatus = () => {
         />
     </div>
     
+    </div>
     </div>
     <div className="fixed bottom-0 w-full">
         <Configuration  />
