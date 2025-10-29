@@ -19,7 +19,7 @@ const ReadyView = () => {
 
   return (
     <div className="relative overflow-x-hidden">
-      <div className="p-8">
+      <div className=" py-5 px-8">
         <ReadyOrders />
         <PreparingOrders />
       </div>
