@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import CategorySection from './CategorySection'
 import { ordersData } from '../../constants'
 import OrderList from './OrderList'
+import Configuration from './Configuration'
 
 const OrderStatus = () => {
   const [activeCategory, setActiveCategory] = useState("preparing")
@@ -45,6 +46,9 @@ const OrderStatus = () => {
           activeCategory={activeCategory}
         />
     </div>
+    <div className="fixed bottom-0 w-full">
+        <Configuration  />
+      </div>
     </div>
   )
 }

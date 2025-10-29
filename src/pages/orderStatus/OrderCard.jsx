@@ -45,13 +45,13 @@ const  OrderCard = ({ order, onMarkReady, onDelete, activeCategory, onMarkCollec
           onMarkCollected(order.id); // 👈 use parent function here
         }
       }}
-          className={`flex-1  ${ activeCategory === "preparing" ? "bg-[#16A34A] hover:bg-green-700":"bg-[#0088FF] hover:bg-blue-700"} cursor-pointer text-white font-light py-2 px-4 rounded-md  transition-colors`}
+          className={`flex-1  ${ activeCategory === "preparing" ? "bg-[#16A34A] hover:bg-green-700":"bg-[#0088FF] hover:bg-blue-700"} cursor-pointer text-white font-light py-1.5 px-4 rounded-md  transition-colors`}
         >
           { activeCategory === "preparing" ? "Mark Ready" : "Mark as Collected"}
         </button>)}
         <button
           onClick={() => onDelete(order.id)}
-          className={` ${ activeCategory === "collected"  ?  "flex-1 ":""} bg-[#DC2626] hover:bg-red-700 flex justify-center cursor-pointer text-white py-2 px-3 rounded-md transition-colors`}
+          className={` ${ activeCategory === "collected"  ?  "flex-1 ":""} bg-[#DC2626] hover:bg-red-700 flex justify-center cursor-pointer text-white py-1.5 px-3 rounded-md transition-colors`}
         >
           <X />
         </button>

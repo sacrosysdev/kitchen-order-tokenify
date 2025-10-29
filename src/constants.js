@@ -337,3 +337,31 @@ export const ordersData = [
     ]
   },
 ];
+
+import Refresh from './assets/svg/Refresh.svg';
+import Sound from './assets/svg/Sound.svg'
+import Sync from './assets/svg/Sync.svg'
+import Settings from './assets/svg/Settings.svg'
+
+export const configurationsData = [
+  {
+    id:1,
+    icon:Refresh,
+    title:"Refresh"
+  },
+  {
+    id:2,
+    icon:Sound,
+    title:"Sound"
+  },
+  {
+    id:3,
+    icon:Sync,
+    title:"Sync"
+  },
+  {
+    id:4,
+    icon:Settings,
+    title:"Settings"
+  },
+]
