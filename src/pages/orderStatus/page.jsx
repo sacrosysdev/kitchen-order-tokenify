@@ -31,7 +31,9 @@ const OrderStatus = () => {
   };
       
   return (
-    <div className='bg-white rounded-lg p-2 h-full'>
+    <div className='relative overflow-x-hidden'>
+    <div className='bg-white rounded-lg py-5 px-8 h-full '>
+
       <div className=''>
         <CategorySection 
           activeCategory={activeCategory}
@@ -45,6 +47,8 @@ const OrderStatus = () => {
           onDelete={handleDelete}
           activeCategory={activeCategory}
         />
+    </div>
+    
     </div>
     <div className="fixed bottom-0 w-full">
         <Configuration  />

@@ -2,7 +2,7 @@ import React from 'react'
 
 const PrepareCard = () => {
   return (
-    <div className='bg-[#D1D5DB] text-white text-center rounded-xl shadow-lg px-4 py-8 ' 
+    <div className='bg-[#D1D5DB] text-white text-center rounded-xl shadow-lg p-6  ' 
     
     >
         <h2 className='font-bold text-xl text-[#121212]'>#103</h2>
