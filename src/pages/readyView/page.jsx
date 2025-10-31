@@ -3,38 +3,28 @@ import React, { useState } from "react";
 import ReadyOrders from "./ReadyOrders";
 import PreparingOrders from "./PreparingOrders";
 import ThanksCard from "./ThanksCard";
-import SuccessModal from "./SuccessModal"; // make sure the import name matches your file
+
 
 const ReadyView = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [orderId, setOrderId] = useState("123"); // replace this with your real order ID if available
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
 
   return (
     <div className="relative overflow-x-hidden">
-      <div className=" py-5 px-8">
-        <ReadyOrders />
-        <PreparingOrders />
+      <div className="py-5 px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+           <PreparingOrders />
+          <ReadyOrders />
+         
+        </div>
       </div>
 
       {/* ThanksCard section */}
       <div className="fixed bottom-0 w-full">
-        <ThanksCard onOpenModal={handleOpenModal} />
+        <ThanksCard  />
       </div>
 
       {/* Modal */}
-      <SuccessModal
-        isOpen={isModalOpen}
-        orderId={orderId}
-        onClose={handleCloseModal}
-      />
+      
     </div>
   );
 };

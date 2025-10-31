@@ -1,23 +1,24 @@
 import { Clock, X } from "lucide-react";
+import { LuUndo2 } from "react-icons/lu";
 
 const  OrderCard = ({ order, onMarkReady, onDelete, activeCategory, onMarkCollected }) => {
-    console.log(activeCategory)
+    
   return (
-    <div className={`bg-[#FAFAFA] rounded-lg border-l-4 ${ activeCategory === "preparing" ? "border-[#16A34A] ": activeCategory === "ready" ? "border-[#0088FF]" : "border-[#DC2626]"} p-4 hover:shadow-md transition-shadow flex flex-col justify-between`}>
+    <div className={`bg-[#FAFAFA] rounded-lg border-l-4 ${ activeCategory === "preparing" ? "border-[#16A34A] ": activeCategory === "ready" ? "border-[#0088FF]" : "border-[#8C8C8C]"} p-4 hover:shadow-md transition-shadow flex flex-col justify-between`}>
       {/* Header */}
       <div>
         <div className="flex items-center gap-2 mb-2">
-        <h3 className="text-xl font-bold">{order.id}</h3>
+        <h3 className={`text-xl font-bold ${activeCategory === "collected" ? "text-gray-500" : "text-black"}`}>{order.tokenNo}</h3>
         
       </div>
       <div className="flex items-center gap-1 text-gray-600 text-sm mb-3">
           <Clock className="w-4 h-4" />
-          <span>{order.time}</span>
+          <span>{order.orderTime}</span>
         </div>
 
       {/* Order Items */}
       <div className="space-y-2 mb-2">
-        {order.items.map((item, idx) => (
+        {order.orderDetails.map((item, idx) => (
           <div key={idx} className="text-sm">
             <div className="font-medium text-gray-900">{item.name}</div>
             {item.details && (
@@ -40,21 +41,21 @@ const  OrderCard = ({ order, onMarkReady, onDelete, activeCategory, onMarkCollec
         {(activeCategory === "ready" || activeCategory === "preparing") && (<button
           onClick={() => {
         if (activeCategory === "preparing") {
-          onMarkReady(order.id);
+          onMarkReady(order.tokenNo);
         } else if (activeCategory === "ready") {
-          onMarkCollected(order.id); // 👈 use parent function here
+          onMarkCollected(order.tokenNo); // 👈 use parent function here
         }
       }}
           className={`flex-1  ${ activeCategory === "preparing" ? "bg-[#16A34A] hover:bg-green-700":"bg-[#0088FF] hover:bg-blue-700"} cursor-pointer text-white font-light py-1.5 px-4 rounded-md  transition-colors`}
         >
           { activeCategory === "preparing" ? "Mark Ready" : "Mark as Collected"}
         </button>)}
-        <button
-          onClick={() => onDelete(order.id)}
-          className={` ${ activeCategory === "collected"  ?  "flex-1 ":""} bg-[#DC2626] hover:bg-red-700 flex justify-center cursor-pointer text-white py-1.5 px-3 rounded-md transition-colors`}
+        {activeCategory !== "preparing" && <button
+          onClick={() => onDelete(order.tokenNo,activeCategory)}
+          className={` ${ activeCategory === "collected"  ?  "flex-1 ":""} bg-[#8C8C8C] hover:bg-[#8C8C8C] flex justify-center cursor-pointer text-white py-1.5 px-3 rounded-md transition-colors`}
         >
-          <X />
-        </button>
+         {activeCategory === "collected"  ?"Undo":null}<LuUndo2 className="mt-1 ml-1"/>
+        </button>}
       </div>
     </div>
   );

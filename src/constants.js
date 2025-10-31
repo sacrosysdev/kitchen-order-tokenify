@@ -4,7 +4,7 @@ export const ordersData = [
     time: '6:15',
     status: 'preparing',
     items: [
-      { name: '2 X Vegan Wrap', details: ['Extra Avocado', 'Add Spicy Sauce'] },
+      { name: '2 X Vegan Wrap', notes: ['Extra Avocado', 'Add Spicy Sauce'] },
       { name: '3 X Fish Tacos' },
       { name: '1 X Side Salad' }
     ]
