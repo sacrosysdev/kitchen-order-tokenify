@@ -1,6 +1,6 @@
 import OrderCard from "./OrderCard";
 
-const OrderList = ({ orders, onMarkReady, onMarkCollected ,onDelete, activeCategory }) => {
+const OrderList = ({ orders, onMarkReady, onMarkCollected ,onDelete, activeCategory, isExpired }) => {
    
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 py-2">
@@ -12,7 +12,7 @@ const OrderList = ({ orders, onMarkReady, onMarkCollected ,onDelete, activeCateg
           onDelete={onDelete}
           activeCategory={activeCategory}
           onMarkCollected={onMarkCollected}
-          
+          isExpired={isExpired}
 
         />
       ))}

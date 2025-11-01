@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { useSearch } from '../contexts/SearchContext';
 
 const SearchSection = () => {
-  const [searchValue, setSearchValue] = useState('');
+  const { searchValue, setSearchValue } = useSearch();
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState('Take Away');
 

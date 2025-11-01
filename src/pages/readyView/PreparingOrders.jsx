@@ -15,8 +15,9 @@ const PreparingOrders = () => {
   useEffect(() => {
     const fetchInitialOrders = async () => {
       try {
+        const apiBaseUrl = localStorage.getItem("apiBaseUrl") || import.meta.env.VITE_API_URL;
         const { data } = await axios.get(
-          `${import.meta.env.VITE_API_URL}/kds/kitchen/orders/live`
+          `${apiBaseUrl}/kds/kitchen/orders/live`
         );
         console.log("📦 Initial Preparing Orders:", data);
         // Filter only Prepare orders
@@ -33,7 +34,8 @@ const PreparingOrders = () => {
 
   // Setup SignalR connection
   useEffect(() => {
-    const hubUrl = `${import.meta.env.VITE_SIGNALR_URL}/kitchenorderhub`;
+    const signalrUrl = localStorage.getItem("signalrUrl") || import.meta.env.VITE_SIGNALR_URL;
+    const hubUrl = `${signalrUrl}/kitchenorderhub`;
     console.log("🔗 Connecting to:", hubUrl);
 
     const newConnection = new signalR.HubConnectionBuilder()

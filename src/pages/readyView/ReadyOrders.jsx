@@ -15,8 +15,9 @@ const ReadyOrders = () => {
   useEffect(() => {
     const fetchInitialOrders = async () => {
       try {
+        const apiBaseUrl = localStorage.getItem("apiBaseUrl") || import.meta.env.VITE_API_URL;
         const { data } = await axios.get(
-          `${import.meta.env.VITE_API_URL}/kds/kitchen/orders/live`
+          `${apiBaseUrl}/kds/kitchen/orders/live`
         );
         const readyOrders = data.data.filter(
           (order) => order.tdsStatus === "Ready"
@@ -31,7 +32,8 @@ const ReadyOrders = () => {
 
   // Setup SignalR connection
   useEffect(() => {
-    const hubUrl = `${import.meta.env.VITE_SIGNALR_URL}/kitchenorderhub`;
+    const signalrUrl = localStorage.getItem("signalrUrl") || import.meta.env.VITE_SIGNALR_URL;
+    const hubUrl = `${signalrUrl}/kitchenorderhub`;
 
     const newConnection = new signalR.HubConnectionBuilder()
       .withUrl(hubUrl)
@@ -42,24 +44,51 @@ const ReadyOrders = () => {
     setConnection(newConnection);
   }, []);
 
-  // Announce token via SpeechSynthesis
   const announceToken = (tokenNo) => {
-    if ("speechSynthesis" in window) {
-      const utterance = new SpeechSynthesisUtterance(
-        `Token number ${tokenNo} is ready for pickup`
-      );
-      utterance.lang = "en-US";
-      utterance.rate = 1;
-      utterance.pitch = 1;
-      window.speechSynthesis.speak(utterance);
+    if (!("speechSynthesis" in window)) {
+      console.warn("Speech synthesis not supported");
+      return;
+    }
+  
+    const message = `Token number ${tokenNo} is ready for pickup`;
+    const utterance = new SpeechSynthesisUtterance(message);
+    utterance.lang = "en-US";
+    utterance.rate = 0.8;
+    utterance.pitch = 1;
+  
+    const speakWithVoice = () => {
+      const voices = window.speechSynthesis.getVoices();
+      if (!voices.length) {
+        console.warn("No voices found yet");
+        return;
+      }
+  
+      const femaleVoice =
+        voices.find((v) =>
+          /(female|woman|zira|linda|amy|aria|natasha|nicole|emma|us english)/i.test(v.name)
+        ) || voices.find((v) => v.lang.startsWith("en"));
+  
+      if (femaleVoice) utterance.voice = femaleVoice;
+  
+      // cancel any ongoing speech before speaking
+      window.speechSynthesis.cancel();
+  
+      // 👇 delay slightly to ensure proper start
+      setTimeout(() => {
+        window.speechSynthesis.speak(utterance);
+      }, 200);
+    };
+  
+    // 👇 Wait for voices if not loaded yet
+    if (window.speechSynthesis.getVoices().length === 0) {
+      window.speechSynthesis.onvoiceschanged = () => {
+        speakWithVoice();
+      };
     } else {
-      // fallback beep
-      const audio = new Audio("/notification.mp3");
-      audio.play().catch((err) =>
-        console.error("Audio play failed:", err)
-      );
+      speakWithVoice();
     }
   };
+  
 
   useEffect(() => {
     if (!connection) return;
@@ -68,8 +97,6 @@ const ReadyOrders = () => {
       try {
         await connection.start();
         setConnected(true);
-        console.log("✅ Connected to SignalR (ReadyOrders)");
-
         connection.on("OrderStatusUpdates", (data) => {
           setOrders((prevOrders) => {
             const updated = [...prevOrders];
@@ -111,7 +138,6 @@ const ReadyOrders = () => {
         setTimeout(startConnection, 10000);
       }
     };
-
     startConnection();
     return () => {
       connection.stop();

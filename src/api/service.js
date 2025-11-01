@@ -1,5 +1,5 @@
-import API from "./httpService";
-import { GET_ORDERS, ORDER_STATUS } from "./endpoint";
+import API, { AuthAPI } from "./httpService";
+import { GET_ORDERS, ORDER_STATUS, Auth } from "./endpoint";
 
 export const getPreparingOrders = () => {
   const params = {
@@ -42,6 +42,22 @@ export const getReadyOrders = () => {
       .then((res) => res.data.data)
       .catch((err) => {
         console.error("Error updating order status:", err);
+        throw err;
+      });
+  };
+
+  export const AuthenticationDevice = (data) => {
+    console.log('Auth API Request:', {
+      url: `${import.meta.env.VITE_AUTH_API_URL}${Auth}`,
+      data: data
+    });
+    return AuthAPI.post(Auth, data)
+      .then((res) => {
+        console.log('Auth API Response:', res.data);
+        return res.data.data;
+      })
+      .catch((err) => {
+        console.error("Error authenticating device:", err.response || err);
         throw err;
       });
   };

@@ -6,7 +6,9 @@ import './App.css'
 import OrderStatus from './pages/orderStatus/page'
 import ReadyView from './pages/readyView/page'
 import ResultLayout from './layouts/ResultLayout';
-import StartScreen from './pages/startScreen/page'
+import Login from './pages/startScreen/login'
+import StartScreen from './pages/startScreen/StartScreen'
+import ConfigPage from './pages/config/ConfigPage'
 
 function App() {
 
@@ -20,6 +22,17 @@ function App() {
           </Layout>
         }>
         </Route>
+        <Route path='/login' element={
+          
+            <Login/>
+          
+        }>
+        </Route>
+        <Route path='/config' element={
+          <ConfigPage/>
+        }>
+        </Route>
+        
         <Route path='/result' element={
           <ResultLayout>
             <ReadyView />
